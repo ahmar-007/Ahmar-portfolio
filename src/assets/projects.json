@@ -1,0 +1,33 @@
+[
+  {
+    "title": "Smiles & elGrocer Web Apps",
+    "meta": "Angular, Etisalat • 2025",
+    "description": "Developed and maintained Smiles rewards and elGrocer grocery platform frontends with order and logistics dashboards.",
+    "tags": ["Angular", "RxJS", "Tailwind"]
+  },
+  {
+    "title": "Algoras ERP",
+    "meta": "Angular • IntelliCode",
+    "description": "Refactored legacy ERP UI, improved UX, mentored juniors, and handled production support.",
+    "tags": ["Angular", "Nx", "Charting"]
+  },
+  {
+    "title": "Algo E-Com",
+    "meta": "ReactJS • IntelliCode",
+    "description": "Built React E‑Commerce app with multi‑store onboarding and dynamic product management.",
+    "tags": ["React", "TypeScript", "Node"]
+  },
+  {
+    "title": "CRM Application",
+    "meta": "Angular • IntelliCode",
+    "description": "Contributed to a software-defined CRM solution front-end, features and performance.",
+    "tags": ["Angular", "RxJS", "State"]
+  },
+  {
+    "title": "Asyeh Al Wakfiah",
+    "meta": "Angular • 2024–2025",
+    "description": "Built a comprehensive web app for a non-profit including bookings, courses/books, memberships, and donations.",
+    "tags": ["Angular", "Forms", "Payments"]
+  }
+]
+

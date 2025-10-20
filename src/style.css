@@ -1,0 +1,285 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Avoid global overflow clipping; we will fix offenders locally */
+
+/* Root theme defaults: start in dark (can be toggled) */
+body {
+  @apply bg-white dark:bg-surface text-neutral-900 dark:text-neutral-100 font-sans leading-relaxed;
+}
+a {
+  @apply text-accent hover:underline;
+}
+
+::selection {
+  background-color: #C3002F;
+  color: white;
+}
+
+/* Progress bar at the top */
+.progress-bar {
+  @apply fixed top-0 left-0 h-1 origin-left z-50;
+  transform: scaleX(0);
+  background: linear-gradient(90deg, #8B5CF6, #06B6D4, #F59E0B);
+  background-size: 300% 100%;
+}
+
+@layer components {
+.nav-link {
+  @apply relative text-[0.95rem] md:text-base font-medium text-neutral-300 hover:text-accent transition-colors;
+  padding-bottom: 2px;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: currentColor; /* matches text color (accent on hover/active) */
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 200ms ease;
+  border-radius: 1px;
+  opacity: 0.9;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+.nav-link.active { @apply text-accent; }
+/* Section paddings & typography tweaks */
+section {
+  @apply scroll-mt-24;
+}
+h1, h2, h3 {
+  @apply tracking-tight;
+}
+.btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-accent text-white px-5 py-2 transition hover:brightness-110 active:scale-[.98] cursor-pointer;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-accent text-accent px-5 py-2 transition hover:bg-accent/10 active:scale-[.98] cursor-pointer;
+  }
+  .card {
+    @apply rounded-xl border border-neutral-200/80 dark:border-white/10 bg-white/80 dark:bg-neutral-900/80 backdrop-blur transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg text-neutral-800 dark:text-neutral-200;
+  }
+  /* Ensure consistent, readable contrast inside cards (Experience, Testimonials) */
+  .card h3 { @apply text-neutral-900 dark:text-neutral-100; }
+  .card p, .card li, .card blockquote { @apply text-neutral-800 dark:text-neutral-200; }
+  .card .text-neutral-500 { @apply text-neutral-700 dark:text-neutral-300; }
+  .muted { @apply text-neutral-600 dark:text-neutral-300; }
+  /* Testimonials readability - reuse project tile look */
+  #testimonials .card { @apply border border-neutral-200/80 dark:border-white/10 bg-white/80 dark:bg-neutral-900/80; }
+  #testimonials blockquote { @apply text-neutral-800 dark:text-neutral-100; font-size: 0.95rem; }
+  #testimonials .muted { @apply text-neutral-700 dark:text-neutral-300; }
+
+/* Light mode specific polish (improves contrast and clarity) */
+html:not(.dark) .nav-link { color: #374151; } /* neutral-700 */
+html:not(.dark) .section-title { color: #111827; } /* neutral-900 */
+html:not(.dark) .muted { color: #4b5563; } /* neutral-600 */
+html:not(.dark) .card {
+  background: #ffffff;
+  border-color: rgba(17, 24, 39, 0.12); /* neutral-900 @ 12% */
+  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+}
+html:not(.dark) #testimonials .card {
+  background: #ffffff;
+  border-color: rgba(17, 24, 39, 0.12);
+}
+html:not(.dark) .aurora {
+  background: radial-gradient(600px 200px at 10% -10%, rgba(139,92,246,0.12), transparent 60%),
+              radial-gradient(600px 200px at 90% 0%, rgba(6,182,212,0.10), transparent 60%),
+              radial-gradient(800px 300px at 50% 100%, rgba(245,158,11,0.08), transparent 60%);
+}
+  .chip {
+  @apply px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-200 border border-neutral-200/60 dark:border-white/10;
+  }
+  .section-title {
+    @apply text-2xl font-bold mb-4 flex items-center gap-3;
+  }
+  .section-title::after {
+    content: "";
+    @apply flex-1 h-px bg-gradient-to-r from-neutral-300/60 to-transparent dark:from-neutral-700/60;
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-neutral-900 via-accent to-neutral-600 dark:from-white dark:via-accent dark:to-neutral-300 bg-clip-text text-transparent;
+  }
+}
+
+/* Tilt effect helpers */
+.tilt {
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+.tilt > * {
+  transform: translateZ(20px);
+}
+
+:root { --spot-x: 50%; --spot-y: 50%; }
+.spotlight { position: relative; }
+.spotlight::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  background: radial-gradient(500px 240px at var(--spot-x) var(--spot-y), rgba(139,92,246,0.18), transparent 60%);
+}
+
+/* Subtle grid background you can apply to sections */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Marquee */
+.marquee { white-space: nowrap; overflow: hidden; mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
+.marquee-track { display: inline-block; padding-inline: 1rem; animation: marquee 18s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* Modal basic styles */
+.modal-backdrop { @apply bg-black/60 backdrop-blur-sm; }
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.vanilla:hover {
+  filter: drop-shadow(0 0 2em #f7df1eaa);
+}
+
+.card {
+  padding: 0.5em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* New modern utilities */
+.aurora {
+  background: radial-gradient(600px 200px at 10% -10%, rgba(139,92,246,0.25), transparent 60%),
+              radial-gradient(600px 200px at 90% 0%, rgba(6,182,212,0.18), transparent 60%),
+              radial-gradient(800px 300px at 50% 100%, rgba(245,158,11,0.15), transparent 60%);
+}
+.blob { filter: blur(40px); opacity: .6; }
+.gradient-border { position: relative; }
+.gradient-border::before {
+  content: "";
+  position: absolute; inset: -1px; border-radius: 0.75rem;
+  background: linear-gradient(90deg, #8B5CF6, #06B6D4, #F59E0B);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude; padding: 1px;
+  pointer-events: none; /* do not block clicks on CTAs inside */
+}
+
+/* Fix any container oversizing that can cause cut-off content */
+.max-w-6xl { max-width: 72rem; width: 100%; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+
+/* On very small screens, reduce side padding to avoid overflow */
+@media (max-width: 380px) {
+  .px-6 { padding-left: 1rem; padding-right: 1rem; }
+}
+
+/* Ensure project and testimonial cards shrink within viewport */
+#projects .card, #testimonials .card { max-width: 100%; }
+
+/* Carousel */
+#hero-carousel { position: relative; }
+#hero-carousel .slide { position: absolute; inset: 0; opacity: 0; transition: opacity .5s ease; background: #0b0b10; display: grid; place-items: center; }
+#hero-carousel .slide.active { opacity: 1; }
+#hero-carousel .slide img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
+#hero-carousel-dots .dot { width: 8px; height: 8px; border-radius: 9999px; background: rgba(255,255,255,.5); }
+#hero-carousel-dots .dot.active { background: #8B5CF6; }
+
+/* Metrics */
+.metric { text-align: center; }
+.metric .num { @apply text-2xl md:text-3xl font-bold; }
+.metric .label { @apply text-xs text-text-muted; }

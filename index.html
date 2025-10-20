@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Senior Frontend Developer (Angular & React) with 4+ years delivering scalable, high-quality frontends. Keen eye for UX, performance, and clean architecture." />
+  <meta property="og:title" content="Ahmar | Senior Frontend Developer" />
+  <meta property="og:description" content="Frontend Developer crafting scalable web applications using Angular and React." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/preview.png" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <title>Ahmar | Senior Frontend Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  </head>
+<body class="scroll-smooth min-h-screen flex flex-col">
+  <div class="progress-bar" id="progress"></div>
+  <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 aurora"></div>
+  <header class="sticky top-0 inset-x-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-neutral-900/60 border-b border-neutral-200/60 dark:border-white/10">
+    <div class="flex items-center justify-between p-4 max-w-6xl mx-auto">
+      <a href="#" class="font-bold text-xl tracking-tight">A | <span class="gradient-text">Ahmar</span></a>
+      <nav class="hidden md:flex items-center gap-6 text-sm ml-6">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#education">Education</a>
+        <a class="nav-link" href="#certifications">Certifications</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+      <div class="hidden md:flex items-center gap-3 ml-6">
+        <button id="theme-toggle" aria-label="Toggle theme" class="rounded-lg bg-white/80 dark:bg-white/5 text-neutral-900 dark:text-neutral-100 border border-neutral-200/60 dark:border-white/10 px-3 py-2 text-sm hover:bg-white/90 dark:hover:bg-white/10">Theme</button>
+        <a href="#contact" class="btn-primary hidden md:inline-flex">Hire me</a>
+      </div>
+      <button id="menu-toggle" aria-label="Open menu" aria-expanded="false" class="md:hidden rounded-lg border border-neutral-200/60 dark:border-white/10 px-3 py-2 text-sm">Menu</button>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobile-nav" class="md:hidden hidden border-t border-neutral-200/60 dark:border-white/10 bg-white/95 dark:bg-neutral-900/95">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-3">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#education">Education</a>
+        <a class="nav-link" href="#certifications">Certifications</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <div class="flex items-center gap-3 pt-2">
+          <button id="theme-toggle-mobile" aria-label="Toggle theme" class="rounded-lg border border-neutral-200/60 dark:border-white/10 px-3 py-2 text-sm">Theme</button>
+          <a href="#contact" class="btn-primary">Hire me</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 pt-6 flex-1 w-full overflow-x-hidden">
+    <!-- Hero -->
+    <section class="py-24 spotlight" id="home">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div class="text-center md:text-left gradient-border rounded-xl p-6">
+          <p class="text-sm uppercase tracking-widest text-neutral-500">Senior Frontend Engineer</p>
+      <h1 class="mt-3 text-4xl sm:text-5xl md:text-6xl font-extrabold gradient-text leading-tight">I build delightful, performant web apps</h1>
+          <p class="mt-2 text-sm text-text-muted">Currently crafting with <span id="role-rotator" class="text-accent font-semibold">Angular</span></p>
+          <p class="mt-4 text-base md:text-lg text-neutral-500 max-w-xl">Angular + React specialist focused on DX, accessibility, and scalable frontends.</p>
+          <div class="mt-8 flex flex-wrap gap-3 justify-center md:justify-start">
+            <a href="#contact" class="btn-primary" role="button" id="cta-contact">Contact Me</a>
+            <a href="#" class="btn-outline" role="button" id="cta-resume" download>Download Resume</a>
+          </div>
+        </div>
+        <div class="hidden md:block">
+          <div class="card p-3 h-72">
+            <div id="hero-carousel" class="relative h-full rounded-xl overflow-hidden">
+              <div class="h-full w-full">
+                <img src="/src/assets/placeholder-1.jpg" alt="Project screenshot 1" class="h-full w-full object-cover" />
+              </div>
+              <div class="absolute bottom-3 right-3 flex gap-2" id="hero-carousel-dots"></div>
+              <div class="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/20 to-transparent"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="metric"><div class="num">4+ yrs</div><div class="label">Experience</div></div>
+        <div class="metric"><div class="num">10+</div><div class="label">Products shipped</div></div>
+        <div class="metric"><div class="num">100K+</div><div class="label">Users impacted</div></div>
+      </div>
+    </section>
+
+    <!-- Tech marquee -->
+    <section class="py-8">
+      <div class="marquee text-sm text-text-muted">
+        <div class="marquee-track">
+          <span class="mx-6">Angular</span><span class="mx-6">React</span><span class="mx-6">TypeScript</span><span class="mx-6">RxJS</span><span class="mx-6">Tailwind</span><span class="mx-6">Material UI</span><span class="mx-6">Ant Design</span><span class="mx-6">Formik</span><span class="mx-6">react-hook-form</span>
+          <span class="mx-6">Angular</span><span class="mx-6">React</span><span class="mx-6">TypeScript</span><span class="mx-6">RxJS</span><span class="mx-6">Tailwind</span><span class="mx-6">Material UI</span><span class="mx-6">Ant Design</span><span class="mx-6">Formik</span><span class="mx-6">react-hook-form</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-16">
+      <h2 class="section-title">What People Say</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <blockquote class="card p-5">“Ahmar consistently delivers clean, scalable frontends and elevates team standards.” <span class="block mt-3 muted">— Engineering Manager</span></blockquote>
+        <blockquote class="card p-5">“Great eye for UX and performance. Our dashboards feel snappier and intuitive.” <span class="block mt-3 muted">— Product Lead</span></blockquote>
+        <blockquote class="card p-5">“Collaborative and proactive. Turns complex requirements into elegant UI.” <span class="block mt-3 muted">— Tech Lead</span></blockquote>
+      </div>
+    </section>
+
+    <!-- Call to action -->
+    <section class="py-20">
+      <div class="card p-10 text-center">
+        <h3 class="text-2xl font-semibold">Have a project in mind?</h3>
+        <p class="mt-2 text-text-muted">Let’s build something exceptional together.</p>
+        <div class="mt-6 flex justify-center gap-3">
+          <a href="#contact" class="btn-primary">Contact Me</a>
+          <a href="/assets/Ahmar-Resume.pdf" download class="btn-outline">Download Resume</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-16">
+      <h2 class="section-title">About Me</h2>
+      <p>
+        Highly skilled Frontend Developer with 4+ years of experience delivering robust and scalable software solutions.
+        Adept in modern frameworks like Angular and React with a keen eye for detail and a passion for intuitive user
+        interfaces. With a solid grounding in web architecture, performance, and agile practices, I focus on shipping
+        clean, maintainable code on time.
+      </p>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="py-16">
+      <h2 class="section-title">Experience</h2>
+      <div class="grid gap-6 border-l border-neutral-200/60 dark:border-white/10 ml-2 pl-6">
+        <div class="card p-6 relative before:content-[''] before:absolute before:-left-[27px] before:top-6 before:w-3 before:h-3 before:rounded-full before:bg-accent">
+          <h3 class="font-semibold text-lg">Senior Software Engineer – Angular</h3>
+          <p class="text-sm muted">elGrocer by Smiles, Etisalat • May 2025 – Present</p>
+          <ul class="list-disc ml-5 mt-2 text-sm">
+            <li>Developing and maintaining Smiles and elGrocer web apps with Angular.</li>
+            <li>Contributing to order and logistics dashboards; optimizing workflows for performance.</li>
+            <li>Collaborating with backend, QA, and design; ensuring scalable, maintainable solutions.</li>
+            <li>Active in code reviews, technical discussions, and sprint planning.</li>
+          </ul>
+        </div>
+        <div class="card p-6 relative before:content-[''] before:absolute before:-left-[27px] before:top-6 before:w-3 before:h-3 before:rounded-full before:bg-accent">
+          <h3 class="font-semibold text-lg">Software Engineer</h3>
+          <p class="text-sm muted">IntelliCode Private Limited • Jun 2022 – May 2025</p>
+          <ul class="list-disc ml-5 mt-2 text-sm">
+            <li>Frontend Angular Developer on ERP and CRM systems; handled multiple Angular apps.</li>
+            <li>Led Algoras support team; resolved customer issues and maintained uptime.</li>
+            <li>Mentored junior developers; performed code reviews and knowledge sharing.</li>
+            <li>Developed new features and refactored UI for usability and performance.</li>
+            <li>Built a React-based E‑Commerce platform from scratch.</li>
+          </ul>
+        </div>
+        <div class="card p-6 relative before:content-[''] before:absolute before:-left-[27px] before:top-6 before:w-3 before:h-3 before:rounded-full before:bg-accent">
+          <h3 class="font-semibold text-lg">Frontend Intern</h3>
+          <p class="text-sm muted">FourX Solutions • Jan 2022 – May 2022</p>
+          <ul class="list-disc ml-5 mt-2 text-sm">
+            <li>Contributed to dashboards and inventory systems in Angular across multiple projects.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-16">
+      <h2 class="section-title">Projects</h2>
+      <div id="projects-grid" class="grid md:grid-cols-2 gap-6"></div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-16">
+      <h2 class="section-title">Skills</h2>
+      <div class="flex flex-wrap gap-3 text-sm">
+        <span class="chip">JavaScript (ES6+)</span>
+        <span class="chip">TypeScript</span>
+        <span class="chip">HTML5/CSS3</span>
+        <span class="chip">Angular</span>
+        <span class="chip">React</span>
+        <span class="chip">RxJS</span>
+        <span class="chip">Bootstrap</span>
+        <span class="chip">Git</span>
+        <span class="chip">Material UI</span>
+        <span class="chip">Ant Design</span>
+        <span class="chip">Formik</span>
+        <span class="chip">Styled Components</span>
+        <span class="chip">react-hook-form</span>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="py-16">
+      <h2 class="section-title">Education</h2>
+      <div class="card p-6 text-sm">
+        <div class="font-semibold">Bachelor of Science in Software Engineering</div>
+        <div class="text-text-muted">Comsats University • Islamabad, Pakistan • 2021</div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications" class="py-16">
+      <h2 class="section-title">Certifications</h2>
+      <div class="grid md:grid-cols-2 gap-4 text-sm">
+        <div class="card p-6"><div class="font-medium">JavaScript</div><div class="text-text-muted">Udemy (Jonas Schmedtmann) • Oct 2021 – Nov 2021</div></div>
+        <div class="card p-6"><div class="font-medium">Angular</div><div class="text-text-muted">Udemy (Maximilian Schwarzmüller) • Jun 2022 – Jul 2022</div></div>
+        <div class="card p-6 md:col-span-2"><div class="font-medium">Frontend</div><div class="text-text-muted">PNY Trainings, Arfa Karim Tower, Lahore • Jun 2021 – Aug 2021</div></div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 text-center">
+      <h2 class="text-2xl font-bold mb-4">Get in Touch</h2>
+      <p class="text-sm mb-6">Let's connect and build something amazing.</p>
+      <div class="flex justify-center gap-6 text-2xl">
+        <a href="mailto:ahmarjamil82@gmail.com" aria-label="Email">📧</a>
+        <a href="https://github.com/ahmar1127" target="_blank" aria-label="GitHub">💻</a>
+        <a href="https://www.linkedin.com/in/ahmarjamil-softwareengineer/" target="_blank" aria-label="LinkedIn">🔗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mt-24 border-t border-neutral-200/60 dark:border-white/10">
+    <div class="max-w-6xl mx-auto px-6 py-8 flex items-center justify-between text-xs text-neutral-500">
+      <span>© 2025 Ahmar </span>
+    </div>
+  </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
