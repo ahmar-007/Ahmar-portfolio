@@ -1,7 +1,11 @@
 import './style.css'
 import { animate, inView } from 'motion'
-// Import resume asset so Vite processes and serves it reliably
+// Import assets so Vite bundles and rewrites URLs correctly for subpaths
 import resumeUrl from './assets/FE_Ahmar_Jamil _Resume.pdf'
+import img1 from './assets/image.png'
+import img2 from './assets/image-1.png'
+import img3 from './assets/image-2.png'
+import projectsData from './assets/projects.json'
 
 // On-view animations are handled via inView below; scroll-tied fades removed for readability
 
@@ -104,21 +108,20 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   })
 })
 
-// Wire resume download link
-const resumeAnchor = document.getElementById('cta-resume')
-if (resumeAnchor) {
-  resumeAnchor.setAttribute('href', resumeUrl)
-  resumeAnchor.setAttribute('download', '')
-}
+// Wire resume download links (any element with download attribute)
+document.querySelectorAll('a[download]').forEach(a => {
+  a.setAttribute('href', resumeUrl)
+  a.setAttribute('download', '')
+})
 
 // Simple hero carousel (screenshots). Replace placeholders once screenshots are added
 const heroCarousel = document.getElementById('hero-carousel')
 const dotsContainer = document.getElementById('hero-carousel-dots')
 if (heroCarousel && dotsContainer) {
   const slides = [
-    { src: '/src/assets/image.png', alt: 'Project 1' },
-    { src: '/src/assets/image-1.png', alt: 'Project 2' },
-    { src: '/src/assets/image-2.png', alt: 'Project 3' },
+    { src: img1, alt: 'Project 1' },
+    { src: img2, alt: 'Project 2' },
+    { src: img3, alt: 'Project 3' },
   ]
 
   // Build slides
@@ -186,26 +189,22 @@ function attachTilt(cards) {
 }
 attachTilt(document.querySelectorAll('#projects .card'))
 
-// Render projects dynamically
-async function renderProjects() {
-  try {
-    const res = await fetch('/src/assets/projects.json')
-    if (!res.ok) return
-    const projects = await res.json()
-    const grid = document.getElementById('projects-grid')
-    if (!grid) return
-    grid.innerHTML = projects.map(p => `
-      <div class="card p-5 group">
-        <h3 class="font-semibold">${p.title}</h3>
-        <p class="text-sm text-neutral-500">${p.meta}</p>
-        <p class="mt-2 text-sm">${p.description}</p>
-        <div class="mt-3 flex flex-wrap gap-2">
-          ${p.tags.map(t => `<span class=\"chip\">${t}</span>`).join('')}
-        </div>
+// Render projects from imported JSON
+function renderProjects() {
+  const grid = document.getElementById('projects-grid')
+  if (!grid) return
+  const projects = Array.isArray(projectsData) ? projectsData : []
+  grid.innerHTML = projects.map(p => `
+    <div class="card p-5 group">
+      <h3 class="font-semibold">${p.title}</h3>
+      <p class="text-sm text-neutral-500">${p.meta}</p>
+      <p class="mt-2 text-sm">${p.description}</p>
+      <div class="mt-3 flex flex-wrap gap-2">
+        ${p.tags.map(t => `<span class=\"chip\">${t}</span>`).join('')}
       </div>
-    `).join('')
-    attachTilt(grid.querySelectorAll('.card'))
-  } catch {}
+    </div>
+  `).join('')
+  attachTilt(grid.querySelectorAll('.card'))
 }
 renderProjects()
 
