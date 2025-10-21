@@ -7,12 +7,13 @@
   <meta property="og:title" content="Ahmar | Senior Frontend Developer" />
   <meta property="og:description" content="Frontend Developer crafting scalable web applications using Angular and React." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="/assets/preview.png" />
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <!-- Use relative asset paths so Vite rewrites with base -->
+  <meta property="og:image" content="assets/preview.png" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <title>Ahmar | Senior Frontend Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/assets/index-E-gGYdaG.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-D7oJQ9h7.css">
+    <script type="module" crossorigin src="/Ahmar-portfolio/assets/index-kMJRJJ_D.js"></script>
+    <link rel="stylesheet" crossorigin href="/Ahmar-portfolio/assets/index-ndGTcCUo.css">
   </head>
 <body class="scroll-smooth min-h-screen flex flex-col">
   <div class="progress-bar" id="progress"></div>
@@ -70,9 +71,7 @@
         <div class="hidden md:block">
           <div class="card p-3 h-72">
             <div id="hero-carousel" class="relative h-full rounded-xl overflow-hidden">
-              <div class="h-full w-full">
-                <img src="/src/assets/placeholder-1.jpg" alt="Project screenshot 1" class="h-full w-full object-cover" />
-              </div>
+              <div class="h-full w-full"></div>
               <div class="absolute bottom-3 right-3 flex gap-2" id="hero-carousel-dots"></div>
               <div class="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/20 to-transparent"></div>
             </div>
@@ -113,7 +112,7 @@
         <p class="mt-2 text-text-muted">Let’s build something exceptional together.</p>
         <div class="mt-6 flex justify-center gap-3">
           <a href="#contact" class="btn-primary">Contact Me</a>
-          <a href="/assets/Ahmar-Resume.pdf" download class="btn-outline">Download Resume</a>
+          <a href="#" download class="btn-outline">Download Resume</a>
         </div>
       </div>
     </section>
