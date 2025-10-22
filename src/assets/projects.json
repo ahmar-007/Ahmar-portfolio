@@ -3,31 +3,31 @@
     "title": "Smiles & elGrocer Web Apps",
     "meta": "Angular, Etisalat • 2025",
     "description": "Developed and maintained Smiles rewards and elGrocer grocery platform frontends with order and logistics dashboards.",
-    "tags": ["Angular", "RxJS", "Tailwind"]
+    "tags": ["Angular 15", "RxJS", "Material UI", "Bootstrap", "Git Versioning Tools", "HTML5/CSS3"]
   },
   {
     "title": "Algoras ERP",
     "meta": "Angular • IntelliCode",
     "description": "Refactored legacy ERP UI, improved UX, mentored juniors, and handled production support.",
-    "tags": ["Angular", "Nx", "Charting"]
+    "tags": ["Angular 16", "State Management", "Lazy Loading", "Forms", "Payments"]
   },
   {
     "title": "Algo E-Com",
     "meta": "ReactJS • IntelliCode",
     "description": "Built React E‑Commerce app with multi‑store onboarding and dynamic product management.",
-    "tags": ["React", "TypeScript", "Node"]
+    "tags": ["React", "TypeScript", "Tailwind", "Formik", "react-hook-form"]
   },
   {
     "title": "CRM Application",
     "meta": "Angular • IntelliCode",
     "description": "Contributed to a software-defined CRM solution front-end, features and performance.",
-    "tags": ["Angular", "RxJS", "State"]
+    "tags": ["Angular", "RxJS", "Observables", "Pipes", "Directives"]
   },
   {
     "title": "Asyeh Al Wakfiah",
     "meta": "Angular • 2024–2025",
     "description": "Built a comprehensive web app for a non-profit including bookings, courses/books, memberships, and donations.",
-    "tags": ["Angular", "Forms", "Payments"]
+    "tags": ["Angular 17", "Forms", "Payments", "Web Sockets", "Subjects/ Observables"]
   }
 ]
 
